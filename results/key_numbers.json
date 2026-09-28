@@ -1,0 +1,1278 @@
+{
+  "states_le_20": 46366,
+  "macro_pairs_checked": 900,
+  "componentwise_T_matches": 0,
+  "counterexample_scan": {
+    "phase": 0,
+    "n": 1,
+    "m": 1,
+    "steps": 1,
+    "out_phase": 1,
+    "out_runs": [
+      0,
+      1
+    ],
+    "T_n": 2,
+    "T_m": 2
+  },
+  "counterexample": {
+    "phase": 0,
+    "n": 4,
+    "m": 1,
+    "steps": 1,
+    "out_phase": 1,
+    "out_runs": [
+      0,
+      4
+    ],
+    "T_n": 2,
+    "T_m": 2
+  },
+  "family_block": [
+    0,
+    1,
+    3
+  ],
+  "entry_classes_checked": 2181,
+  "entry_L_max": 12,
+  "sigma": {
+    "kmax": 24,
+    "n_ok": 24,
+    "rows": [
+      {
+        "k": 1,
+        "kind": "cycle",
+        "period": 20,
+        "mu": 0,
+        "expect": 20,
+        "ok": true
+      },
+      {
+        "k": 2,
+        "kind": "cycle",
+        "period": 160,
+        "mu": 0,
+        "expect": 160,
+        "ok": true
+      },
+      {
+        "k": 3,
+        "kind": "cycle",
+        "period": 220,
+        "mu": 0,
+        "expect": 220,
+        "ok": true
+      },
+      {
+        "k": 4,
+        "kind": "cycle",
+        "period": 280,
+        "mu": 0,
+        "expect": 280,
+        "ok": true
+      },
+      {
+        "k": 5,
+        "kind": "cycle",
+        "period": 340,
+        "mu": 0,
+        "expect": 340,
+        "ok": true
+      },
+      {
+        "k": 6,
+        "kind": "cycle",
+        "period": 400,
+        "mu": 0,
+        "expect": 400,
+        "ok": true
+      },
+      {
+        "k": 7,
+        "kind": "cycle",
+        "period": 460,
+        "mu": 0,
+        "expect": 460,
+        "ok": true
+      },
+      {
+        "k": 8,
+        "kind": "cycle",
+        "period": 520,
+        "mu": 0,
+        "expect": 520,
+        "ok": true
+      },
+      {
+        "k": 9,
+        "kind": "cycle",
+        "period": 580,
+        "mu": 0,
+        "expect": 580,
+        "ok": true
+      },
+      {
+        "k": 10,
+        "kind": "cycle",
+        "period": 640,
+        "mu": 0,
+        "expect": 640,
+        "ok": true
+      },
+      {
+        "k": 11,
+        "kind": "cycle",
+        "period": 700,
+        "mu": 0,
+        "expect": 700,
+        "ok": true
+      },
+      {
+        "k": 12,
+        "kind": "cycle",
+        "period": 760,
+        "mu": 0,
+        "expect": 760,
+        "ok": true
+      },
+      {
+        "k": 13,
+        "kind": "cycle",
+        "period": 820,
+        "mu": 0,
+        "expect": 820,
+        "ok": true
+      },
+      {
+        "k": 14,
+        "kind": "cycle",
+        "period": 880,
+        "mu": 0,
+        "expect": 880,
+        "ok": true
+      },
+      {
+        "k": 15,
+        "kind": "cycle",
+        "period": 940,
+        "mu": 0,
+        "expect": 940,
+        "ok": true
+      },
+      {
+        "k": 16,
+        "kind": "cycle",
+        "period": 1000,
+        "mu": 0,
+        "expect": 1000,
+        "ok": true
+      },
+      {
+        "k": 17,
+        "kind": "cycle",
+        "period": 1060,
+        "mu": 0,
+        "expect": 1060,
+        "ok": true
+      },
+      {
+        "k": 18,
+        "kind": "cycle",
+        "period": 1120,
+        "mu": 0,
+        "expect": 1120,
+        "ok": true
+      },
+      {
+        "k": 19,
+        "kind": "cycle",
+        "period": 1180,
+        "mu": 0,
+        "expect": 1180,
+        "ok": true
+      },
+      {
+        "k": 20,
+        "kind": "cycle",
+        "period": 1240,
+        "mu": 0,
+        "expect": 1240,
+        "ok": true
+      },
+      {
+        "k": 21,
+        "kind": "cycle",
+        "period": 1300,
+        "mu": 0,
+        "expect": 1300,
+        "ok": true
+      },
+      {
+        "k": 22,
+        "kind": "cycle",
+        "period": 1360,
+        "mu": 0,
+        "expect": 1360,
+        "ok": true
+      },
+      {
+        "k": 23,
+        "kind": "cycle",
+        "period": 1420,
+        "mu": 0,
+        "expect": 1420,
+        "ok": true
+      },
+      {
+        "k": 24,
+        "kind": "cycle",
+        "period": 1480,
+        "mu": 0,
+        "expect": 1480,
+        "ok": true
+      }
+    ]
+  },
+  "enum": [
+    {
+      "L": 2,
+      "classes": 3,
+      "halt": 3,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 25
+    },
+    {
+      "L": 3,
+      "classes": 9,
+      "halt": 9,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 27
+    },
+    {
+      "L": 4,
+      "classes": 9,
+      "halt": 9,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 32
+    },
+    {
+      "L": 5,
+      "classes": 27,
+      "halt": 27,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 130
+    },
+    {
+      "L": 6,
+      "classes": 27,
+      "halt": 27,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 155
+    },
+    {
+      "L": 7,
+      "classes": 81,
+      "halt": 81,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 159
+    },
+    {
+      "L": 8,
+      "classes": 81,
+      "halt": 81,
+      "cycle": 0,
+      "unknown": 0,
+      "max_steps_to_halt": 155
+    },
+    {
+      "L": 9,
+      "classes": 243,
+      "halt": 237,
+      "cycle": 6,
+      "unknown": 0,
+      "max_steps_to_halt": 173
+    },
+    {
+      "L": 10,
+      "classes": 243,
+      "halt": 227,
+      "cycle": 16,
+      "unknown": 0,
+      "max_steps_to_halt": 315
+    },
+    {
+      "L": 11,
+      "classes": 729,
+      "halt": 685,
+      "cycle": 44,
+      "unknown": 0,
+      "max_steps_to_halt": 1269
+    },
+    {
+      "L": 12,
+      "classes": 729,
+      "halt": 702,
+      "cycle": 27,
+      "unknown": 0,
+      "max_steps_to_halt": 1270
+    },
+    {
+      "L": 13,
+      "classes": 2187,
+      "halt": 2088,
+      "cycle": 99,
+      "unknown": 0,
+      "max_steps_to_halt": 1289
+    },
+    {
+      "L": 14,
+      "classes": 2187,
+      "halt": 2066,
+      "cycle": 121,
+      "unknown": 0,
+      "max_steps_to_halt": 1286
+    },
+    {
+      "L": 15,
+      "classes": 6561,
+      "halt": 6214,
+      "cycle": 347,
+      "unknown": 0,
+      "max_steps_to_halt": 1296
+    },
+    {
+      "L": 16,
+      "classes": 6561,
+      "halt": 6141,
+      "cycle": 420,
+      "unknown": 0,
+      "max_steps_to_halt": 1294
+    },
+    {
+      "L": 17,
+      "classes": 19683,
+      "halt": 18437,
+      "cycle": 1246,
+      "unknown": 0,
+      "max_steps_to_halt": 41866
+    },
+    {
+      "L": 18,
+      "classes": 19683,
+      "halt": 18507,
+      "cycle": 1176,
+      "unknown": 0,
+      "max_steps_to_halt": 41867
+    },
+    {
+      "L": 19,
+      "classes": 59049,
+      "halt": 55902,
+      "cycle": 3147,
+      "unknown": 0,
+      "max_steps_to_halt": 42342
+    },
+    {
+      "L": 20,
+      "classes": 59049,
+      "halt": 55656,
+      "cycle": 3393,
+      "unknown": 0,
+      "max_steps_to_halt": 42341
+    },
+    {
+      "L": 21,
+      "classes": 177147,
+      "halt": 167348,
+      "cycle": 9799,
+      "unknown": 0,
+      "max_steps_to_halt": 42778
+    },
+    {
+      "L": 22,
+      "classes": 177147,
+      "halt": 168131,
+      "cycle": 9016,
+      "unknown": 0,
+      "max_steps_to_halt": 42780
+    },
+    {
+      "L": 23,
+      "classes": 531441,
+      "halt": 506745,
+      "cycle": 24696,
+      "unknown": 0,
+      "max_steps_to_halt": 43004
+    },
+    {
+      "L": 24,
+      "classes": 531441,
+      "halt": 505424,
+      "cycle": 26017,
+      "unknown": 0,
+      "max_steps_to_halt": 83347
+    },
+    {
+      "L": 25,
+      "classes": 1594323,
+      "halt": 1518055,
+      "cycle": 76268,
+      "unknown": 0,
+      "max_steps_to_halt": 114273
+    },
+    {
+      "L": 26,
+      "classes": 1594323,
+      "halt": 1521969,
+      "cycle": 72354,
+      "unknown": 0,
+      "max_steps_to_halt": 114278
+    },
+    {
+      "L": 27,
+      "classes": 4782969,
+      "halt": 4575208,
+      "cycle": 207761,
+      "unknown": 0,
+      "max_steps_to_halt": 114350
+    },
+    {
+      "L": 28,
+      "classes": 4782969,
+      "halt": 4563822,
+      "cycle": 219147,
+      "unknown": 0,
+      "max_steps_to_halt": 114349
+    }
+  ],
+  "enum_max_L": 28,
+  "unknown_total": 0,
+  "cycles": [
+    {
+      "first_L": 9,
+      "period": 4,
+      "min_len": 9,
+      "max_len": 10,
+      "word": "ACBACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        1,
+        3
+      ],
+      "n_series": 3,
+      "max_series": 4,
+      "is_T4": true
+    },
+    {
+      "first_L": 9,
+      "period": 40,
+      "min_len": 9,
+      "max_len": 17,
+      "word": "ACACACACACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "n_series": 6,
+      "max_series": 7,
+      "is_T4": false
+    },
+    {
+      "first_L": 13,
+      "period": 120,
+      "min_len": 15,
+      "max_len": 32,
+      "word": "ACACACACACACACACACACBBBBBBACACAC",
+      "phase": 0,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      "n_series": 14,
+      "max_series": 14,
+      "is_T4": false
+    },
+    {
+      "first_L": 16,
+      "period": 88,
+      "min_len": 19,
+      "max_len": 27,
+      "word": "ACACACACACBBBACACACBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        0,
+        2
+      ],
+      "n_series": 9,
+      "max_series": 10,
+      "is_T4": false
+    },
+    {
+      "first_L": 17,
+      "period": 4,
+      "min_len": 17,
+      "max_len": 18,
+      "word": "ACBACBBBACBACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        1,
+        3,
+        1,
+        3
+      ],
+      "n_series": 5,
+      "max_series": 6,
+      "is_T4": true
+    },
+    {
+      "first_L": 23,
+      "period": 20,
+      "min_len": 30,
+      "max_len": 35,
+      "word": "ACACACACACBBBBBACACBBBBBBACACA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        6,
+        0,
+        0
+      ],
+      "n_series": 10,
+      "max_series": 11,
+      "is_T4": false
+    },
+    {
+      "first_L": 23,
+      "period": 100,
+      "min_len": 26,
+      "max_len": 39,
+      "word": "ACACACACACBBBACBBBBBBACBBBBBBACACA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        6,
+        6,
+        0,
+        0
+      ],
+      "n_series": 10,
+      "max_series": 13,
+      "is_T4": false
+    },
+    {
+      "first_L": 25,
+      "period": 4,
+      "min_len": 25,
+      "max_len": 26,
+      "word": "ACBACBBBACBACBBBACBACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        1,
+        3,
+        1,
+        3,
+        1,
+        3
+      ],
+      "n_series": 7,
+      "max_series": 8,
+      "is_T4": true
+    },
+    {
+      "first_L": 25,
+      "period": 100,
+      "min_len": 29,
+      "max_len": 37,
+      "word": "ACACACACACBBBACBBBBBBACBBBACACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        6,
+        3,
+        0,
+        3
+      ],
+      "n_series": 10,
+      "max_series": 13,
+      "is_T4": false
+    },
+    {
+      "first_L": 25,
+      "period": 100,
+      "min_len": 25,
+      "max_len": 41,
+      "word": "ACACACACACBBBACBBBBBBBBBACACACACACBBBA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        9,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "n_series": 12,
+      "max_series": 13,
+      "is_T4": false
+    },
+    {
+      "first_L": 26,
+      "period": 148,
+      "min_len": 43,
+      "max_len": 65,
+      "word": "ACACACACACACACACACACACACACACACACACACBBBBBBBBBBBBBBBACACACACA",
+      "phase": 1,
+      "runs": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        15,
+        0,
+        0,
+        0,
+        0
+      ],
+      "n_series": 23,
+      "max_series": 26,
+      "is_T4": false
+    }
+  ],
+  "n_cycles": 11,
+  "n_T4_members": 3,
+  "n_sporadic": 8,
+  "q4_chain": [
+    3,
+    7,
+    15,
+    31,
+    63,
+    127,
+    255,
+    511,
+    1023
+  ],
+  "drift": {
+    "q3": {
+      "q": 3,
+      "n_max": 8000,
+      "step_cap": 10000,
+      "macro_steps": 440130,
+      "mean_dln": -0.14519116423024103,
+      "theory": -0.14384103622589045,
+      "odd_steps": 218420,
+      "odd_to_odd": 109730
+    },
+    "q5": {
+      "q": 5,
+      "n_max": 4000,
+      "step_cap": 60,
+      "macro_steps": 238059,
+      "mean_dln": 0.11962747537907994,
+      "theory": 0.11157177565710488,
+      "odd_steps": 120002,
+      "odd_to_odd": 59596
+    }
+  },
+  "stopping": {
+    "n_min": 2,
+    "n_max": 8000,
+    "lagarias_const": 6.952118993564416,
+    "mean_macro_per_ln": 6.890907852250265,
+    "median_macro_per_ln": 5.820055863756411,
+    "mean_S_over_n": 51.2584956984065,
+    "median_S_over_n": 14.403600464576074,
+    "mean_ln_S_over_n": 2.783472060481298,
+    "model_S_factor": 7.464101615137752,
+    "s27": 40656,
+    "maxlen27": 4616,
+    "macro_steps_27": 70
+  },
+  "search_ext": {
+    "ready": true,
+    "text_tail": "BOUNDS d=2..8 |X|=1..3 |S|=0..4 |P|=1..6 tests=13 orientation=classic\nSYSTEMS 48231288\nPASSED_N2 175096\nDONE\n",
+    "found_lines": [],
+    "bounds": "d=2..8 |X|=1..3 |S|=0..4 |P|=1..6 tests=13 orientation=classic",
+    "systems": 48231288,
+    "passed_n2": 175096
+  },
+  "pumps_summary": {
+    "n_hits": 313,
+    "n_block_13": 18,
+    "n_other": 295,
+    "other": [
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          2
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          0
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          0
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 1,
+        "prefix": [
+          0
+        ],
+        "block": [
+          1,
+          3,
+          1,
+          3
+        ],
+        "suffix": [],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 1,
+        "prefix": [
+          0,
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          3
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          3,
+          1,
+          2
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          3,
+          1,
+          3,
+          1
+        ],
+        "suffix": [
+          2
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          3,
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          2
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          0
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          3,
+          1,
+          0
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          0
+        ],
+        "block": [
+          3,
+          1,
+          3,
+          1
+        ],
+        "suffix": [
+          0
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          0,
+          3,
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          0
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          1,
+          3,
+          1,
+          3
+        ],
+        "suffix": [
+          1
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [
+          3,
+          1
+        ],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          1
+        ],
+        "block": [
+          3,
+          1,
+          3,
+          1
+        ],
+        "suffix": [],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 4,
+        "source_word": "ACBACBBBACBACBBBA",
+        "phase": 0,
+        "prefix": [
+          1,
+          3,
+          1
+        ],
+        "block": [
+          3,
+          1
+        ],
+        "suffix": [],
+        "periods_k234": [
+          4,
+          4,
+          4
+        ],
+        "k5": {
+          "period": 4,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 20,
+        "source_word": "ACACACACACBBBBBACACBBBBBBACACA",
+        "phase": 0,
+        "prefix": [
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "block": [
+          0,
+          5,
+          0,
+          3
+        ],
+        "suffix": [],
+        "periods_k234": [
+          160,
+          220,
+          280
+        ],
+        "k5": {
+          "period": 340,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 20,
+        "source_word": "ACACACACACBBBBBACACBBBBBBACACA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          2,
+          0,
+          6,
+          0
+        ],
+        "suffix": [
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "periods_k234": [
+          160,
+          220,
+          280
+        ],
+        "k5": {
+          "period": 340,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 100,
+        "source_word": "ACACACACACBBBACBBBBBBACBBBBBBACACA",
+        "phase": 1,
+        "prefix": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3
+        ],
+        "block": [
+          6,
+          6,
+          0,
+          0
+        ],
+        "suffix": [],
+        "periods_k234": [
+          160,
+          220,
+          280
+        ],
+        "k5": {
+          "period": 340,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 100,
+        "source_word": "ACACACACACBBBACBBBBBBACBBBBBBACACA",
+        "phase": 0,
+        "prefix": [
+          0,
+          9,
+          0,
+          0,
+          0
+        ],
+        "block": [
+          0,
+          3,
+          6,
+          3
+        ],
+        "suffix": [],
+        "periods_k234": [
+          160,
+          220,
+          280
+        ],
+        "k5": {
+          "period": 340,
+          "mu": 0
+        }
+      },
+      {
+        "source_period": 100,
+        "source_word": "ACACACACACBBBACBBBBBBACBBBBBBACACA",
+        "phase": 0,
+        "prefix": [],
+        "block": [
+          5,
+          0,
+          3,
+          0
+        ],
+        "suffix": [
+          3,
+          9
+        ],
+        "periods_k234": [
+          160,
+          220,
+          280
+        ],
+        "k5": {
+          "period": 340,
+          "mu": 0
+        }
+      }
+    ]
+  }
+}

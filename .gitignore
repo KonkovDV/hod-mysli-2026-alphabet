@@ -1,0 +1,7 @@
+__pycache__/
+csrc/enum
+csrc/search_binary
+csrc/search_ext
+*.exe
+*.o
+*.pyc

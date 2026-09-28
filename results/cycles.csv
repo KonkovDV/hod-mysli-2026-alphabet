@@ -1,0 +1,12 @@
+first_L,period,min_len,max_len,word_latin,word_cyr
+9,4,9,10,ACBACBBBA,АВБАВБББА
+9,40,9,17,ACACACACACBBBA,АВАВАВАВАВБББА
+13,120,15,32,ACACACACACACACACACACBBBBBBACACAC,АВАВАВАВАВАВАВАВАВАВББББББАВАВАВ
+16,88,19,27,ACACACACACBBBACACACBBA,АВАВАВАВАВБББАВАВАВББА
+17,4,17,18,ACBACBBBACBACBBBA,АВБАВБББАВБАВБББА
+23,20,30,35,ACACACACACBBBBBACACBBBBBBACACA,АВАВАВАВАВБББББАВАВББББББАВАВА
+23,100,26,39,ACACACACACBBBACBBBBBBACBBBBBBACACA,АВАВАВАВАВБББАВББББББАВББББББАВАВА
+25,4,25,26,ACBACBBBACBACBBBACBACBBBA,АВБАВБББАВБАВБББАВБАВБББА
+25,100,25,41,ACACACACACBBBACBBBBBBBBBACACACACACBBBA,АВАВАВАВАВБББАВБББББББББАВАВАВАВАВБББА
+25,100,29,37,ACACACACACBBBACBBBBBBACBBBACACBBBA,АВАВАВАВАВБББАВББББББАВБББАВАВБББА
+26,148,43,65,ACACACACACACACACACACACACACACACACACACBBBBBBBBBBBBBBBACACACACA,АВАВАВАВАВАВАВАВАВАВАВАВАВАВАВАВАВАВБББББББББББББББАВАВАВАВА

@@ -1,0 +1,4 @@
+BOUNDS d=2..8 |X|=1..3 |S|=0..4 |P|=1..6 tests=13 orientation=classic
+SYSTEMS 48231288
+PASSED_N2 175096
+DONE

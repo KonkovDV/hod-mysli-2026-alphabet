@@ -1,0 +1,14 @@
+name: verify-all-claims
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: make -C csrc
+      - run: ./csrc/enum 2 20 > /tmp/enum.csv 2> /tmp/cyc.txt && head -25 /tmp/enum.csv
+      - run: pytest -q tests
+      - run: python scripts/run_all.py
