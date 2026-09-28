@@ -6,3 +6,5 @@ csrc/search_ext
 *.o
 *.pyc
 rsrc/target/
+.lake/
+*.olean

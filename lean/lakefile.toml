@@ -1,0 +1,6 @@
+name = "tagt4"
+version = "0.1.0"
+defaultTargets = ["TagT4"]
+
+[[lean_lib]]
+name = "TagT4"
