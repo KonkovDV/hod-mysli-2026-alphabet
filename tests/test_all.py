@@ -267,6 +267,29 @@ def test_family_q():
         n = m
 
 
+def test_cycle_checked_before_step_limit():
+    """Встреча Брента ровно на шаге после лимита — цикл, не UNKNOWN."""
+    w = "ACBACBBBA"
+    power = lam = 1
+    tortoise = hare = w
+    steps = 0
+    while True:
+        hare = TASK.step(hare)
+        assert hare is not None
+        steps += 1
+        if tortoise == hare:
+            break
+        if power == lam:
+            tortoise, power, lam = hare, power * 2, 0
+        lam += 1
+        assert steps < 100000
+    assert steps >= 2
+    edge = TASK.run(w, max_steps=steps - 1)
+    assert edge.outcome == Outcome.CYCLE
+    earlier = TASK.run(w, max_steps=steps - 2)
+    assert earlier.outcome == Outcome.UNKNOWN
+
+
 if __name__ == "__main__":
     fns = [v for k, v in dict(globals()).items() if k.startswith("test_")]
     for f in fns:

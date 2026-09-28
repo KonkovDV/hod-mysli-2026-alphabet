@@ -5,7 +5,8 @@
  * Internally we store the REVERSED word (read first letter, delete 2, append) in a
  * ring buffer.  Cycle detection: Brent's algorithm.  Output CSV to stdout:
  *   L,halt,cycle,unknown,max_steps_to_halt,argmax_word
- * and cycles (canonical = lexicographically minimal rotation of orbit) to stderr:
+ * and cycles (canonical = lexicographic minimum among orbit states; lengths differ,
+ * so this is not a rotation of one string) to stderr:
  *   CYCLE,L_first_seen,period,minlen,maxlen,word
  */
 #include <stdio.h>
@@ -38,7 +39,7 @@ static int run(Q*start,long*steps,int L){
   for(;;){
     if(!step(&Bq)){ *steps=total+1-1+0; /* recompute exactly below */ break; }
     total++;
-    if(qlen(&Bq)>MAXLEN||total>MAXSTEPS){ *steps=total; return 2; }
+    /* Равенство раньше лимита: цикл, встреченный ровно на граничном шаге, не UNKNOWN. */
     if(qeq(&A,&Bq)){ /* cycle of length lam; extract canonical rep */
       static Q c; qcopy(&c,&Bq); static char best[MAXLEN+1], cur[MAXLEN+1]; qstr(&c,best);
       int minl=qlen(&c),maxl=qlen(&c);
@@ -49,6 +50,7 @@ static int run(Q*start,long*steps,int L){
         else { cyc_key[ncyc++]=strdup(best);
         fprintf(stderr,"CYCLE,%d,%ld,%d,%d,%s\n",L,lam,minl,maxl,best); } }
       *steps=total; return 1; }
+    if(qlen(&Bq)>MAXLEN||total>MAXSTEPS){ *steps=total; return 2; }
     if(power==lam){ qcopy(&A,&Bq); power*=2; lam=0; }
     lam++;
   }
@@ -57,6 +59,10 @@ static int run(Q*start,long*steps,int L){
 }
 int main(int argc,char**argv){
   int Lmin=argc>1?atoi(argv[1]):2, Lmax=argc>2?atoi(argv[2]):20;
+  if(Lmin<2||Lmax<Lmin||Lmax>40){
+    fprintf(stderr,"usage: enum Lmin Lmax   (2 <= Lmin <= Lmax <= 40)\n");
+    return 2;
+  }
   printf("L,classes,halt,cycle,unknown,max_steps_to_halt,argmax_word\n");
   static Q w; static char buf[MAXLEN+1];
   for(int L=Lmin;L<=Lmax;L++){
@@ -68,7 +74,8 @@ int main(int argc,char**argv){
       for(int i=0;i<nr;i++){ o[L-1-2*i]=x%3; x/=3; }
       w.h=0; w.t=L; for(int i=0;i<L;i++) w.b[i]=o[L-1-i];   /* reversed */
       long st; int r=run(&w,&st,L);
-      if(r==0){h++; if(st>best){best=st; qstr(&w,buf); strncpy(bw,buf,63);} } else if(r==1)c++; else u++;
+      if(r==0){h++; if(st>best){best=st; qstr(&w,buf);
+        size_t n=strlen(buf); if(n>=sizeof bw) n=sizeof bw-1; memcpy(bw,buf,n); bw[n]=0; }} else if(r==1)c++; else u++;
     }
     printf("%d,%ld,%ld,%ld,%ld,%ld,%s\n",L,cls,h,c,u,best,bw); fflush(stdout);
   }

@@ -7,9 +7,17 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - uses: dtolnay/rust-toolchain@stable
       - run: pip install -r requirements.txt
       - run: make -C csrc
-      - run: ./csrc/enum 2 20 > /tmp/enum.csv 2> /tmp/cyc.txt && python scripts/check_enum.py /tmp/enum.csv results/enumeration.csv 20
-      - run: ./csrc/search_binary > /tmp/search.txt && grep -q '^DONE$' /tmp/search.txt && ! grep -q '^d=' /tmp/search.txt
+      # C-перебор против каталога
+      - run: ./csrc/enum 2 22 > /tmp/enum_c.csv 2> /tmp/cyc_c.txt && python scripts/check_enum.py /tmp/enum_c.csv results/enumeration.csv 22
+      # Rust: портабельная сборка (без target-cpu=native), тесты и независимый прогон
+      - run: RUSTFLAGS="" cargo test --release --manifest-path rsrc/Cargo.toml
+      - run: RUSTFLAGS="" cargo run --release --manifest-path rsrc/Cargo.toml -- 2 22 > /tmp/enum_rs.csv 2> /tmp/enum_rs.log && python scripts/check_enum.py /tmp/enum_rs.csv results/enumeration.csv 22
+      - run: cmp <(cut -d, -f1-5 /tmp/enum_c.csv) <(cut -d, -f1-5 /tmp/enum_rs.csv)
+      # двоичный поиск: ИМЕННО тот, на котором число 48 231 288 в тексте
+      - run: ./csrc/search_ext > /tmp/search_ext.txt && grep -q 'SYSTEMS 48231288' /tmp/search_ext.txt
       - run: pytest -q tests
+      - run: python scripts/qr_phase_diagram.py && python scripts/sigma_law.py 60 && python scripts/basins.py 18
       - run: python scripts/run_all.py

@@ -1,4 +1,2 @@
-# Бинарь собран под тот CPU, на котором запускается cargo (у этой машины — alderlake:
-# AVX2, BMI2; AVX-512 у i5-13600KF аппаратно выключен).
-[build]
-rustflags = ["-C", "target-cpu=native"]
+# target-cpu=native намеренно не задан: так бинарь собирается и на другом CPU, включая ARM.
+# AVX2 на x86_64 включается в рантайме (is_x86_feature_detected), а не флагом сборки.

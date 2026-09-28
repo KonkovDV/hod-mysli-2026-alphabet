@@ -18,7 +18,7 @@
 | σ | Семейство σ_k: период 20 при k=1 и 40+60k при k≥2 | перебор k≤24; для всех k — гипотеза | `test_sigma_family_period_law` |
 | Б1 | Двухбуквенный аналог (блочный код, читаем 2, стираем 4) | доказано + тест | `test_block_binary_simulation` |
 | Б2 | Двухбуквенный аналог — циклическая tag-система Кука (6 продукций) | доказано + тест | `test_cyclic_tag_simulation` |
-| Б3 | Нет малых двоичных tag-систем, реализующих T на кодах X^n | перебор | `csrc/search_binary.c` |
+| Б3 | Нет малых двоичных tag-систем, реализующих T на кодах X^n | перебор | `csrc/search_ext.c` (48 231 288 систем; `search_binary.c` — меньший первый прогон) |
 | И | Толкование «стираем сколько есть» → цикл Б↔АВ ≙ цикл Коллатца 1↔2 | доказано + тест | `test_partial_convention...` |
 
 ## Запуск
@@ -26,14 +26,14 @@
 pip install -r requirements.txt
 make -C csrc
 ./csrc/enum 2 22 > results/enumeration.csv 2> results/cycles_raw.txt   # однопоточно
-cargo run --release --manifest-path rsrc/Cargo.toml -- 2 22          # все ядра, AVX2, тот же CSV
+cargo run --release --manifest-path rsrc/Cargo.toml -- 2 30 > results/enumeration_rust.csv 2> results/enum_rust_log.txt
 python tests/test_all.py        # или: pytest -q
 python scripts/run_all.py       # таблицы и рисунки в results/ и figures/
 ```
 
 ## Структура
 - `src/tagsys/`: ядро (`core.py`), связь с Коллатцем (`collatz.py`), циклы (`cycles.py`), двоичные аналоги (`binary.py`)
-- `csrc/`: быстрый полный перебор (`enum.c`, детекция циклов по Бренту) и поиск двоичных систем (`search_binary.c`)
+- `csrc/`: быстрый полный перебор (`enum.c`, детекция циклов по Бренту) и поиск двоичных систем (`search_ext.c`; `search_binary.c` — меньший первый прогон)
 - `tests/`: каждое утверждение работы в виде теста
 - `docs/`: план для ИИ, подводные камни, литература, вопросы для очного тура, шаблон раскрытия ИИ
 - `paper/`: черновик текста решения

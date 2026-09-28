@@ -1,4 +1,2 @@
-# Чтобы `cargo build --manifest-path rsrc/Cargo.toml` из корня тоже собирал
-# бинарь под этот CPU (Alder Lake / Raptor Lake: AVX2, без AVX-512).
-[build]
-rustflags = ["-C", "target-cpu=native"]
+# target-cpu=native намеренно не задан: так бинарь собирается и на другом CPU, включая ARM.
+# AVX2 на x86_64 включается в рантайме (is_x86_feature_detected), а не флагом сборки.

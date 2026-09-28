@@ -11,6 +11,7 @@
 //! Детекция цикла — алгоритм Брента, тот же, что в `csrc/enum.c`, чтобы
 //! периоды и канонические слова совпали с уже посчитанным каталогом.
 
+#[cfg(target_arch = "x86_64")]
 use std::arch::x86_64::{
     _mm256_cmpeq_epi8, _mm256_loadu_si256, _mm256_movemask_epi8, __m256i,
 };
@@ -154,6 +155,7 @@ unsafe fn eq_words(a: *const u8, b: *const u8, n: usize) -> bool {
     true
 }
 
+#[cfg(target_arch = "x86_64")]
 #[target_feature(enable = "avx2")]
 #[inline]
 unsafe fn eq_avx2(a: *const u8, b: *const u8, n: usize) -> bool {
@@ -195,11 +197,12 @@ fn rings_eq(a: &Ring, b: &Ring) -> bool {
         }
         match (a.contig(n), b.contig(n)) {
             (Some(pa), Some(pb)) => {
-                if cfg!(target_feature = "avx2") && n >= 32 {
-                    eq_avx2(pa, pb, n)
-                } else {
-                    eq_words(pa, pb, n)
+                // AVX2 по факту процессора, без target-cpu=native: иначе бинарь не соберётся на ARM.
+                #[cfg(target_arch = "x86_64")]
+                if n >= 32 && std::arch::is_x86_feature_detected!("avx2") {
+                    return eq_avx2(pa, pb, n);
                 }
+                eq_words(pa, pb, n)
             }
             _ => {
                 for i in 0..n as u32 {
@@ -288,6 +291,7 @@ impl Acc {
     }
 }
 
+/// Лексикографический минимум по состояниям орбиты. Длины слов в цикле разные, это не ротация одной строки.
 #[inline(never)]
 fn canonical(src: &Ring, lam: u64, tmp: &mut Ring) -> (String, i32, i32) {
     tmp.copy_from(src);
@@ -331,7 +335,22 @@ fn note_cycle(hare: &Ring, lam: u64, tmp: &mut Ring, acc: &mut Acc) {
     acc.cycle += 1;
 }
 
-fn run_class(l: usize, code: u64, tortoise: &mut Ring, hare: &mut Ring, tmp: &mut Ring, acc: &mut Acc) {
+struct ClassEnd {
+    /// 0 — остановка, 1 — цикл, 2 — лимит.
+    kind: u8,
+    /// Шаг, на котором исход решён. Для цикла это шаг встречи Брента.
+    at: u64,
+}
+
+fn run_class(
+    l: usize,
+    code: u64,
+    tortoise: &mut Ring,
+    hare: &mut Ring,
+    tmp: &mut Ring,
+    acc: &mut Acc,
+    max_steps: u64,
+) -> ClassEnd {
     hare.load_class(l, code);
     tortoise.copy_from(hare);
     let mut power: u64 = 1;
@@ -346,16 +365,17 @@ fn run_class(l: usize, code: u64, tortoise: &mut Ring, hare: &mut Ring, tmp: &mu
                 k += 1;
             }
             acc.note_halt(k as i64, code);
-            return;
+            return ClassEnd { kind: 0, at: k };
         }
         total += 1;
-        if hare.len() > MAXLEN || total > MAXSTEPS {
-            note_unknown(acc);
-            return;
-        }
+        // Равенство раньше лимита: встреча ровно на граничном шаге остаётся циклом.
         if rings_eq(tortoise, hare) {
             note_cycle(hare, lam, tmp, acc);
-            return;
+            return ClassEnd { kind: 1, at: total };
+        }
+        if hare.len() > MAXLEN || total > max_steps {
+            note_unknown(acc);
+            return ClassEnd { kind: 2, at: total };
         }
         if power == lam {
             tortoise.copy_from(hare);
@@ -378,7 +398,7 @@ fn worker(l: usize, cls: u64, cursor: &Cursor) -> Acc {
         }
         let end = (start + CHUNK).min(cls);
         for code in start..end {
-            run_class(l, code, &mut tortoise, &mut hare, &mut tmp, &mut acc);
+            let _ = run_class(l, code, &mut tortoise, &mut hare, &mut tmp, &mut acc, MAXSTEPS);
         }
     }
     acc
@@ -438,6 +458,17 @@ fn enumerate_length(l: usize, threads: usize) -> Acc {
     total
 }
 
+fn avx2_on() -> bool {
+    #[cfg(target_arch = "x86_64")]
+    {
+        std::arch::is_x86_feature_detected!("avx2")
+    }
+    #[cfg(not(target_arch = "x86_64"))]
+    {
+        false
+    }
+}
+
 fn main() {
     let mut args = std::env::args().skip(1);
     let lmin: usize = args.next().and_then(|s| s.parse().ok()).unwrap_or(2);
@@ -451,7 +482,7 @@ fn main() {
     }
     eprintln!(
         "enum_rs threads={threads} avx2={} chunk={CHUNK}",
-        cfg!(target_feature = "avx2")
+        avx2_on()
     );
     println!("L,classes,halt,cycle,unknown,max_steps_to_halt,argmax_word");
     for l in lmin..=lmax {
@@ -478,5 +509,45 @@ mod tests {
         r.load_class(3, 1 + 3); // цифры 1,1 → слово BBB, reversed тоже BBB
         assert!(r.step());
         assert_eq!(to_original(&r), "ACB");
+    }
+
+    #[test]
+    fn cycle_meeting_past_the_step_limit_stays_a_cycle() {
+        let mut tortoise = Ring::new();
+        let mut hare = Ring::new();
+        let mut tmp = Ring::new();
+        for code in 0..243u64 {
+            let mut acc = Acc::new();
+            let end = run_class(9, code, &mut tortoise, &mut hare, &mut tmp, &mut acc, u64::MAX);
+            if end.kind != 1 {
+                continue;
+            }
+            assert!(end.at >= 2, "встреча раньше второго шага");
+            let mut edge_acc = Acc::new();
+            let edge = run_class(
+                9,
+                code,
+                &mut tortoise,
+                &mut hare,
+                &mut tmp,
+                &mut edge_acc,
+                end.at - 1,
+            );
+            assert_eq!(edge.kind, 1, "шаг {} при лимите {} должен быть циклом", end.at, end.at - 1);
+            assert_eq!(edge_acc.unknown, 0);
+            let mut early_acc = Acc::new();
+            let early = run_class(
+                9,
+                code,
+                &mut tortoise,
+                &mut hare,
+                &mut tmp,
+                &mut early_acc,
+                end.at - 2,
+            );
+            assert_eq!(early.kind, 2);
+            return;
+        }
+        panic!("на длине 9 цикл не найден");
     }
 }
