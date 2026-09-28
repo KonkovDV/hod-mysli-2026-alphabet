@@ -480,6 +480,13 @@ fn main() {
         eprintln!("usage: enum_rs Lmin Lmax [threads]   (2 ≤ Lmin ≤ Lmax ≤ 40)");
         std::process::exit(2);
     }
+    let argv: Vec<String> = std::env::args().collect();
+    eprintln!(
+        "commit={} rustc={} argv={}",
+        env!("ENUM_COMMIT"),
+        env!("ENUM_RUSTC"),
+        argv.join(" ")
+    );
     eprintln!(
         "enum_rs threads={threads} avx2={} chunk={CHUNK}",
         avx2_on()
