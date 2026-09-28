@@ -2327,5 +2327,11 @@
     "period40_classes": 4,
     "period4_words": 162,
     "period40_words": 324
+  },
+  "binary_words": {
+    "lmax": 12,
+    "halt_B": 7803,
+    "cycle": 385,
+    "unknown": 0
   }
 }

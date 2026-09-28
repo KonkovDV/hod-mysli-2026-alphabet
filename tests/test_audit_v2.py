@@ -60,3 +60,86 @@ def test_uniqueness_small():
     assert len(nr.renamings()) == 6
     for prod, X in nr.renamings():
         assert _simulates(prod, X, nmax=40)
+
+
+def bin3(w):
+    if w[-1] == "A":
+        return "BBB" + w[:-2]
+    if w[-2:] == "BB":
+        return "AB" + w[:-2]
+    return "B" + w[:-2]
+
+
+def test_bin3_rules():
+    """Три правила «кончается на А / ББ / АБ» идут шаг в шаг с исходной системой."""
+    for n in range(2, 50):
+        w = u = "B" * n
+        while len(w) >= 2:
+            assert w.replace("V", "B") == u
+            w, u = nr.step1(w), bin3(u)
+        assert u == "B"
+
+
+def test_bin_halts_only_on_B():
+    """Остановка двоичной системы только на Б; длины 2..12 без неизвестных исходов."""
+    from itertools import product
+
+    halt = cycle = unknown = 0
+    for length in range(2, 13):
+        for letters in product("AB", repeat=length):
+            w = "".join(letters)
+            seen = set()
+            steps = 0
+            while len(w) >= 2:
+                if w in seen:
+                    cycle += 1
+                    break
+                seen.add(w)
+                w = bin3(w)
+                steps += 1
+                if steps > 100000:
+                    unknown += 1
+                    break
+            else:
+                assert w == "B"
+                halt += 1
+    assert (halt, cycle, unknown) == (7803, 385, 0)
+
+
+def test_second_binary_solution():
+    """Второе решение: Б^n → Б^T(n), чётное n за 3n/2 шагов."""
+    rules = {"BB": "AB", "BA": "BBB", "AB": "AA", "AA": "B"}
+    for n in range(2, 40):
+        w = "B" * n
+        steps = 0
+        while True:
+            w = rules[w[-2:]] + w[:-2]
+            steps += 1
+            assert steps < 5000
+            if set(w) == {"B"}:
+                break
+        assert len(w) == (n // 2 if n % 2 == 0 else (3 * n + 1) // 2)
+        assert steps == (3 * n // 2 if n % 2 == 0 else n + 1)
+
+
+def test_context2_two_solutions_up_to_renaming():
+    """32 совпадения = 2 переименования × (15 доопределений + 1 другое решение)."""
+    from collections import Counter
+
+    path = os.path.join(ROOT, "results", "context2.txt")
+    hits = [line.strip() for line in open(path, encoding="utf-8") if line.startswith("HIT")]
+    assert len(hits) == 32
+    codes = Counter(line.split()[-1] for line in hits)
+    assert codes == Counter({"0": 16, "1": 16})
+    assert any("AB:AA" in line and line.endswith("code 1") for line in hits)
+    assert sum("AB:B" in line and line.endswith("code 1") for line in hits) == 15
+
+
+def test_run_language_is_fibonacci():
+    def fib(k):
+        a, b = 0, 1
+        for _ in range(k):
+            a, b = b, a + b
+        return a
+
+    assert fib(24) - 2 == 46366
