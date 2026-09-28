@@ -1,0 +1,4 @@
+# Бинарь собран под тот CPU, на котором запускается cargo (у этой машины — alderlake:
+# AVX2, BMI2; AVX-512 у i5-13600KF аппаратно выключен).
+[build]
+rustflags = ["-C", "target-cpu=native"]

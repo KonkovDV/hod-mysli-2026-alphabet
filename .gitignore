@@ -5,3 +5,4 @@ csrc/search_ext
 *.exe
 *.o
 *.pyc
+rsrc/target/

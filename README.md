@@ -12,7 +12,7 @@
 | Т3 | Б^n → Б^T(n) ровно за n / n+1 шагов | доказано | `test_collatz_macro_step` |
 | Ф | Время остановки S(n)=Σ(m + m mod 2) по орбите; S(27)=40 656 | доказано (условно на орбиту) | `test_halting_time_formula` |
 | Т4 | (АВБАВБББ)^k А — цикл периода 4 для любого k | доказано | `test_infinite_cycle_family` |
-| Н5 | Все классы слов длины ≤ 28: только остановка или цикл; 11 разных циклов, неизвестных исходов нет | перебор | `csrc/enum.c` → `results/enumeration.csv` |
+| Н5 | Все классы слов длины ≤ 30: только остановка или цикл; 11 разных циклов, неизвестных исходов нет | перебор | `rsrc` (и `csrc/enum.c`) → `results/enumeration.csv` |
 | НФ | После ≤ ⌈L/2⌉ шагов слово в языке серий L; шаг задаётся правилами R1–R5 | доказано + перебор до длины 20 | `src/tagsys/runs.py` |
 | Q | При чётном q≥4 нечётные Б^n растут; при q=2 — циклы; при q=1 — остановка | доказано | `test_family_q` |
 | σ | Семейство σ_k: период 20 при k=1 и 40+60k при k≥2 | перебор k≤24; для всех k — гипотеза | `test_sigma_family_period_law` |
@@ -25,7 +25,8 @@
 ```bash
 pip install -r requirements.txt
 make -C csrc
-./csrc/enum 2 22 > results/enumeration.csv 2> results/cycles_raw.txt   # ~15 с; до 25 — ~2 мин
+./csrc/enum 2 22 > results/enumeration.csv 2> results/cycles_raw.txt   # однопоточно
+cargo run --release --manifest-path rsrc/Cargo.toml -- 2 22          # все ядра, AVX2, тот же CSV
 python tests/test_all.py        # или: pytest -q
 python scripts/run_all.py       # таблицы и рисунки в results/ и figures/
 ```

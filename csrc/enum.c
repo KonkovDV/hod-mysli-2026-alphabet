@@ -29,7 +29,8 @@ static void qstr(const Q*q,char*out){ /* print in ORIGINAL orientation (reverse 
 #define MAXCYC 4096
 static char *cyc_key[MAXCYC]; static int ncyc=0;
 static int seen_cycle(const char*k){ for(int i=0;i<ncyc;i++) if(!strcmp(cyc_key[i],k)) return 1; return 0; }
-/* returns 0 halt,1 cycle,2 unknown; *steps = steps to halt or mu+lambda */
+/* returns 0 halt, 1 cycle, 2 unknown.
+ * *steps = exact halt count, or Brent's step counter at detection (not mu+lambda). */
 static Q A,Bq,tmp;
 static int run(Q*start,long*steps,int L){
   qcopy(&A,start); qcopy(&Bq,start); long power=1,lam=1; long total=0;
@@ -43,8 +44,10 @@ static int run(Q*start,long*steps,int L){
       int minl=qlen(&c),maxl=qlen(&c);
       for(long i=1;i<lam;i++){ step(&c); qstr(&c,cur); if(strcmp(cur,best)<0) strcpy(best,cur);
         if((int)qlen(&c)<minl)minl=qlen(&c); if((int)qlen(&c)>maxl)maxl=qlen(&c);} 
-      if(!seen_cycle(best)&&ncyc<MAXCYC){ cyc_key[ncyc++]=strdup(best);
-        fprintf(stderr,"CYCLE,%d,%ld,%d,%d,%s\n",L,lam,minl,maxl,best); }
+      if(!seen_cycle(best)){
+        if(ncyc>=MAXCYC) fprintf(stderr,"CYCLE_OVERFLOW,%d,%ld,%s\n",L,lam,best);
+        else { cyc_key[ncyc++]=strdup(best);
+        fprintf(stderr,"CYCLE,%d,%ld,%d,%d,%s\n",L,lam,minl,maxl,best); } }
       *steps=total; return 1; }
     if(power==lam){ qcopy(&A,&Bq); power*=2; lam=0; }
     lam++;

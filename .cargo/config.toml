@@ -1,0 +1,4 @@
+# Чтобы `cargo build --manifest-path rsrc/Cargo.toml` из корня тоже собирал
+# бинарь под этот CPU (Alder Lake / Raptor Lake: AVX2, без AVX-512).
+[build]
+rustflags = ["-C", "target-cpu=native"]

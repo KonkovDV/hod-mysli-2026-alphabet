@@ -37,7 +37,10 @@ def test_dead_letters_lemma():
 
 
 def test_halts_only_on_B():
-    """Лемма 2: остановка (из длины >= 2) всегда на слове «Б»."""
+    """Лемма 2: из длины >= 2 остановка только на «Б»; длина < 2 стоит на себе."""
+    for w in ("", "A", "B", "C"):
+        r = TASK.run(w)
+        assert r.outcome == Outcome.HALT and r.final == w and r.steps == 0
     rnd = random.Random(3)
     for _ in range(3000):
         w = "".join(rnd.choice("ABC") for _ in range(rnd.randint(2, 12)))

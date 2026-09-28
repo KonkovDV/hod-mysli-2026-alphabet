@@ -81,8 +81,6 @@ class TagSystem:
                 return RunResult(Outcome.HALT, steps, 0, hare, mlen)
             hare, steps = nxt, steps + 1
             mlen = max(mlen, len(hare))
-            if steps > max_steps or len(hare) > max_len:
-                return RunResult(Outcome.UNKNOWN, steps, 0, None, mlen)
             if tortoise == hare:
                 # нашли период lam; найдём mu (первый вход в цикл)
                 t = h = w
@@ -92,6 +90,8 @@ class TagSystem:
                 while t != h:
                     t, h, mu = self.step(t), self.step(h), mu + 1
                 return RunResult(Outcome.CYCLE, mu, lam, t, mlen)
+            if steps > max_steps or len(hare) > max_len:
+                return RunResult(Outcome.UNKNOWN, steps, 0, None, mlen)
             if power == lam:
                 tortoise, power, lam = hare, power * 2, 0
             lam += 1

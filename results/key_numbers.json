@@ -449,9 +449,25 @@
       "cycle": 219147,
       "unknown": 0,
       "max_steps_to_halt": 114349
+    },
+    {
+      "L": 29,
+      "classes": 14348907,
+      "halt": 13703419,
+      "cycle": 645488,
+      "unknown": 0,
+      "max_steps_to_halt": 114381
+    },
+    {
+      "L": 30,
+      "classes": 14348907,
+      "halt": 13730069,
+      "cycle": 618838,
+      "unknown": 0,
+      "max_steps_to_halt": 233105
     }
   ],
-  "enum_max_L": 28,
+  "enum_max_L": 30,
   "unknown_total": 0,
   "cycles": [
     {

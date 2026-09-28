@@ -1,0 +1,12 @@
+[package]
+name = "enum_rs"
+version = "0.1.0"
+edition = "2021"
+description = "Параллельный перебор 2-tag системы задачи «простой алфавит»"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+opt-level = 3
+panic = "abort"
+overflow-checks = false

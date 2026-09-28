@@ -4,12 +4,23 @@
     python scripts/build_paper.py
 """
 from __future__ import annotations
-import json, os, sys
+import json, os, subprocess, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 from tagsys.collatz import predicted_halting_steps, collatz_orbit
 from tagsys.core import TASK, to_cyr
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+
+def commit_id() -> str:
+    try:
+        h = subprocess.check_output(
+            ["git", "rev-parse", "--short=12", "HEAD"], cwd=ROOT, text=True
+        ).strip()
+        dirty = subprocess.call(["git", "diff", "--quiet", "HEAD"], cwd=ROOT) != 0
+        return h + ("-dirty" if dirty else "")
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return "unknown"
 
 
 def isp(n) -> str:
@@ -120,14 +131,14 @@ def main():
         "ENUM_L": str(nums["enum_max_L"]),
         "UNKNOWN": str(nums["unknown_total"]),
         "SIGMA_KMAX": str(sig["kmax"]),
-        "Q3_MEAN": fnum(d3["mean_dln"]),
-        "Q3_TH": fnum(d3["theory"]),
+        "Q3_MEAN": fnum(d3["mean_dln"], 3),
+        "Q3_TH": fnum(d3["theory"], 3),
         "Q3_STEPS": isp(d3["macro_steps"]),
         "Q3_N": isp(d3["n_max"]),
         "Q3_ODD": isp(d3["odd_steps"]),
         "Q3_OO": isp(d3["odd_to_odd"]),
-        "Q5_MEAN": fnum(d5["mean_dln"]),
-        "Q5_TH": fnum(d5["theory"]),
+        "Q5_MEAN": fnum(d5["mean_dln"], 3),
+        "Q5_TH": fnum(d5["theory"], 3),
         "Q5_STEPS": isp(d5["macro_steps"]),
         "Q5_N": isp(d5["n_max"]),
         "LAG": fnum(st["lagarias_const"], 4),
@@ -150,6 +161,7 @@ def main():
         "ENUM_TABLE": enum_md,
         "CYCLE_TABLE": cycle_table(nums["cycles"]),
         "GITHUB": "https://github.com/KonkovDV/hod-mysli-2026-alphabet",
+        "COMMIT": commit_id(),
     }
     out = tpl
     for k, v in repl.items():

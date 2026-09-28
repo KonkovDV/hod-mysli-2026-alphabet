@@ -9,6 +9,7 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
       - run: make -C csrc
-      - run: ./csrc/enum 2 20 > /tmp/enum.csv 2> /tmp/cyc.txt && head -25 /tmp/enum.csv
+      - run: ./csrc/enum 2 20 > /tmp/enum.csv 2> /tmp/cyc.txt && python scripts/check_enum.py /tmp/enum.csv results/enumeration.csv 20
+      - run: ./csrc/search_binary > /tmp/search.txt && grep -q '^DONE$' /tmp/search.txt && ! grep -q '^d=' /tmp/search.txt
       - run: pytest -q tests
       - run: python scripts/run_all.py
