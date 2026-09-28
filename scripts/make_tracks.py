@@ -744,7 +744,7 @@ def main():
     print("pumps...", "states", sum(len(c.get("states", [])) for c in cycles))
     pumps = search_pumps(cycles)
     print("sigma...")
-    nums["sigma"] = verify_sigma(24)
+    nums["sigma"] = verify_sigma(150)
     print("pumps found", len(pumps))
     print("enum...")
     enum_rows = load_enum_rows()

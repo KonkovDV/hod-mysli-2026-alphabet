@@ -131,6 +131,7 @@ def main():
         "ENUM_L": str(nums["enum_max_L"]),
         "UNKNOWN": str(nums["unknown_total"]),
         "SIGMA_KMAX": str(sig["kmax"]),
+        "BASINS_NOTE": open(os.path.join(ROOT, "results", "basins_highlight.md"), encoding="utf-8").read().strip(),
         "Q3_MEAN": fnum(d3["mean_dln"], 3),
         "Q3_TH": fnum(d3["theory"], 3),
         "Q3_STEPS": isp(d3["macro_steps"]),

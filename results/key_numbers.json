@@ -36,8 +36,8 @@
   "entry_classes_checked": 2181,
   "entry_L_max": 12,
   "sigma": {
-    "kmax": 24,
-    "n_ok": 24,
+    "kmax": 150,
+    "n_ok": 150,
     "rows": [
       {
         "k": 1,
@@ -229,6 +229,1014 @@
         "period": 1480,
         "mu": 0,
         "expect": 1480,
+        "ok": true
+      },
+      {
+        "k": 25,
+        "kind": "cycle",
+        "period": 1540,
+        "mu": 0,
+        "expect": 1540,
+        "ok": true
+      },
+      {
+        "k": 26,
+        "kind": "cycle",
+        "period": 1600,
+        "mu": 0,
+        "expect": 1600,
+        "ok": true
+      },
+      {
+        "k": 27,
+        "kind": "cycle",
+        "period": 1660,
+        "mu": 0,
+        "expect": 1660,
+        "ok": true
+      },
+      {
+        "k": 28,
+        "kind": "cycle",
+        "period": 1720,
+        "mu": 0,
+        "expect": 1720,
+        "ok": true
+      },
+      {
+        "k": 29,
+        "kind": "cycle",
+        "period": 1780,
+        "mu": 0,
+        "expect": 1780,
+        "ok": true
+      },
+      {
+        "k": 30,
+        "kind": "cycle",
+        "period": 1840,
+        "mu": 0,
+        "expect": 1840,
+        "ok": true
+      },
+      {
+        "k": 31,
+        "kind": "cycle",
+        "period": 1900,
+        "mu": 0,
+        "expect": 1900,
+        "ok": true
+      },
+      {
+        "k": 32,
+        "kind": "cycle",
+        "period": 1960,
+        "mu": 0,
+        "expect": 1960,
+        "ok": true
+      },
+      {
+        "k": 33,
+        "kind": "cycle",
+        "period": 2020,
+        "mu": 0,
+        "expect": 2020,
+        "ok": true
+      },
+      {
+        "k": 34,
+        "kind": "cycle",
+        "period": 2080,
+        "mu": 0,
+        "expect": 2080,
+        "ok": true
+      },
+      {
+        "k": 35,
+        "kind": "cycle",
+        "period": 2140,
+        "mu": 0,
+        "expect": 2140,
+        "ok": true
+      },
+      {
+        "k": 36,
+        "kind": "cycle",
+        "period": 2200,
+        "mu": 0,
+        "expect": 2200,
+        "ok": true
+      },
+      {
+        "k": 37,
+        "kind": "cycle",
+        "period": 2260,
+        "mu": 0,
+        "expect": 2260,
+        "ok": true
+      },
+      {
+        "k": 38,
+        "kind": "cycle",
+        "period": 2320,
+        "mu": 0,
+        "expect": 2320,
+        "ok": true
+      },
+      {
+        "k": 39,
+        "kind": "cycle",
+        "period": 2380,
+        "mu": 0,
+        "expect": 2380,
+        "ok": true
+      },
+      {
+        "k": 40,
+        "kind": "cycle",
+        "period": 2440,
+        "mu": 0,
+        "expect": 2440,
+        "ok": true
+      },
+      {
+        "k": 41,
+        "kind": "cycle",
+        "period": 2500,
+        "mu": 0,
+        "expect": 2500,
+        "ok": true
+      },
+      {
+        "k": 42,
+        "kind": "cycle",
+        "period": 2560,
+        "mu": 0,
+        "expect": 2560,
+        "ok": true
+      },
+      {
+        "k": 43,
+        "kind": "cycle",
+        "period": 2620,
+        "mu": 0,
+        "expect": 2620,
+        "ok": true
+      },
+      {
+        "k": 44,
+        "kind": "cycle",
+        "period": 2680,
+        "mu": 0,
+        "expect": 2680,
+        "ok": true
+      },
+      {
+        "k": 45,
+        "kind": "cycle",
+        "period": 2740,
+        "mu": 0,
+        "expect": 2740,
+        "ok": true
+      },
+      {
+        "k": 46,
+        "kind": "cycle",
+        "period": 2800,
+        "mu": 0,
+        "expect": 2800,
+        "ok": true
+      },
+      {
+        "k": 47,
+        "kind": "cycle",
+        "period": 2860,
+        "mu": 0,
+        "expect": 2860,
+        "ok": true
+      },
+      {
+        "k": 48,
+        "kind": "cycle",
+        "period": 2920,
+        "mu": 0,
+        "expect": 2920,
+        "ok": true
+      },
+      {
+        "k": 49,
+        "kind": "cycle",
+        "period": 2980,
+        "mu": 0,
+        "expect": 2980,
+        "ok": true
+      },
+      {
+        "k": 50,
+        "kind": "cycle",
+        "period": 3040,
+        "mu": 0,
+        "expect": 3040,
+        "ok": true
+      },
+      {
+        "k": 51,
+        "kind": "cycle",
+        "period": 3100,
+        "mu": 0,
+        "expect": 3100,
+        "ok": true
+      },
+      {
+        "k": 52,
+        "kind": "cycle",
+        "period": 3160,
+        "mu": 0,
+        "expect": 3160,
+        "ok": true
+      },
+      {
+        "k": 53,
+        "kind": "cycle",
+        "period": 3220,
+        "mu": 0,
+        "expect": 3220,
+        "ok": true
+      },
+      {
+        "k": 54,
+        "kind": "cycle",
+        "period": 3280,
+        "mu": 0,
+        "expect": 3280,
+        "ok": true
+      },
+      {
+        "k": 55,
+        "kind": "cycle",
+        "period": 3340,
+        "mu": 0,
+        "expect": 3340,
+        "ok": true
+      },
+      {
+        "k": 56,
+        "kind": "cycle",
+        "period": 3400,
+        "mu": 0,
+        "expect": 3400,
+        "ok": true
+      },
+      {
+        "k": 57,
+        "kind": "cycle",
+        "period": 3460,
+        "mu": 0,
+        "expect": 3460,
+        "ok": true
+      },
+      {
+        "k": 58,
+        "kind": "cycle",
+        "period": 3520,
+        "mu": 0,
+        "expect": 3520,
+        "ok": true
+      },
+      {
+        "k": 59,
+        "kind": "cycle",
+        "period": 3580,
+        "mu": 0,
+        "expect": 3580,
+        "ok": true
+      },
+      {
+        "k": 60,
+        "kind": "cycle",
+        "period": 3640,
+        "mu": 0,
+        "expect": 3640,
+        "ok": true
+      },
+      {
+        "k": 61,
+        "kind": "cycle",
+        "period": 3700,
+        "mu": 0,
+        "expect": 3700,
+        "ok": true
+      },
+      {
+        "k": 62,
+        "kind": "cycle",
+        "period": 3760,
+        "mu": 0,
+        "expect": 3760,
+        "ok": true
+      },
+      {
+        "k": 63,
+        "kind": "cycle",
+        "period": 3820,
+        "mu": 0,
+        "expect": 3820,
+        "ok": true
+      },
+      {
+        "k": 64,
+        "kind": "cycle",
+        "period": 3880,
+        "mu": 0,
+        "expect": 3880,
+        "ok": true
+      },
+      {
+        "k": 65,
+        "kind": "cycle",
+        "period": 3940,
+        "mu": 0,
+        "expect": 3940,
+        "ok": true
+      },
+      {
+        "k": 66,
+        "kind": "cycle",
+        "period": 4000,
+        "mu": 0,
+        "expect": 4000,
+        "ok": true
+      },
+      {
+        "k": 67,
+        "kind": "cycle",
+        "period": 4060,
+        "mu": 0,
+        "expect": 4060,
+        "ok": true
+      },
+      {
+        "k": 68,
+        "kind": "cycle",
+        "period": 4120,
+        "mu": 0,
+        "expect": 4120,
+        "ok": true
+      },
+      {
+        "k": 69,
+        "kind": "cycle",
+        "period": 4180,
+        "mu": 0,
+        "expect": 4180,
+        "ok": true
+      },
+      {
+        "k": 70,
+        "kind": "cycle",
+        "period": 4240,
+        "mu": 0,
+        "expect": 4240,
+        "ok": true
+      },
+      {
+        "k": 71,
+        "kind": "cycle",
+        "period": 4300,
+        "mu": 0,
+        "expect": 4300,
+        "ok": true
+      },
+      {
+        "k": 72,
+        "kind": "cycle",
+        "period": 4360,
+        "mu": 0,
+        "expect": 4360,
+        "ok": true
+      },
+      {
+        "k": 73,
+        "kind": "cycle",
+        "period": 4420,
+        "mu": 0,
+        "expect": 4420,
+        "ok": true
+      },
+      {
+        "k": 74,
+        "kind": "cycle",
+        "period": 4480,
+        "mu": 0,
+        "expect": 4480,
+        "ok": true
+      },
+      {
+        "k": 75,
+        "kind": "cycle",
+        "period": 4540,
+        "mu": 0,
+        "expect": 4540,
+        "ok": true
+      },
+      {
+        "k": 76,
+        "kind": "cycle",
+        "period": 4600,
+        "mu": 0,
+        "expect": 4600,
+        "ok": true
+      },
+      {
+        "k": 77,
+        "kind": "cycle",
+        "period": 4660,
+        "mu": 0,
+        "expect": 4660,
+        "ok": true
+      },
+      {
+        "k": 78,
+        "kind": "cycle",
+        "period": 4720,
+        "mu": 0,
+        "expect": 4720,
+        "ok": true
+      },
+      {
+        "k": 79,
+        "kind": "cycle",
+        "period": 4780,
+        "mu": 0,
+        "expect": 4780,
+        "ok": true
+      },
+      {
+        "k": 80,
+        "kind": "cycle",
+        "period": 4840,
+        "mu": 0,
+        "expect": 4840,
+        "ok": true
+      },
+      {
+        "k": 81,
+        "kind": "cycle",
+        "period": 4900,
+        "mu": 0,
+        "expect": 4900,
+        "ok": true
+      },
+      {
+        "k": 82,
+        "kind": "cycle",
+        "period": 4960,
+        "mu": 0,
+        "expect": 4960,
+        "ok": true
+      },
+      {
+        "k": 83,
+        "kind": "cycle",
+        "period": 5020,
+        "mu": 0,
+        "expect": 5020,
+        "ok": true
+      },
+      {
+        "k": 84,
+        "kind": "cycle",
+        "period": 5080,
+        "mu": 0,
+        "expect": 5080,
+        "ok": true
+      },
+      {
+        "k": 85,
+        "kind": "cycle",
+        "period": 5140,
+        "mu": 0,
+        "expect": 5140,
+        "ok": true
+      },
+      {
+        "k": 86,
+        "kind": "cycle",
+        "period": 5200,
+        "mu": 0,
+        "expect": 5200,
+        "ok": true
+      },
+      {
+        "k": 87,
+        "kind": "cycle",
+        "period": 5260,
+        "mu": 0,
+        "expect": 5260,
+        "ok": true
+      },
+      {
+        "k": 88,
+        "kind": "cycle",
+        "period": 5320,
+        "mu": 0,
+        "expect": 5320,
+        "ok": true
+      },
+      {
+        "k": 89,
+        "kind": "cycle",
+        "period": 5380,
+        "mu": 0,
+        "expect": 5380,
+        "ok": true
+      },
+      {
+        "k": 90,
+        "kind": "cycle",
+        "period": 5440,
+        "mu": 0,
+        "expect": 5440,
+        "ok": true
+      },
+      {
+        "k": 91,
+        "kind": "cycle",
+        "period": 5500,
+        "mu": 0,
+        "expect": 5500,
+        "ok": true
+      },
+      {
+        "k": 92,
+        "kind": "cycle",
+        "period": 5560,
+        "mu": 0,
+        "expect": 5560,
+        "ok": true
+      },
+      {
+        "k": 93,
+        "kind": "cycle",
+        "period": 5620,
+        "mu": 0,
+        "expect": 5620,
+        "ok": true
+      },
+      {
+        "k": 94,
+        "kind": "cycle",
+        "period": 5680,
+        "mu": 0,
+        "expect": 5680,
+        "ok": true
+      },
+      {
+        "k": 95,
+        "kind": "cycle",
+        "period": 5740,
+        "mu": 0,
+        "expect": 5740,
+        "ok": true
+      },
+      {
+        "k": 96,
+        "kind": "cycle",
+        "period": 5800,
+        "mu": 0,
+        "expect": 5800,
+        "ok": true
+      },
+      {
+        "k": 97,
+        "kind": "cycle",
+        "period": 5860,
+        "mu": 0,
+        "expect": 5860,
+        "ok": true
+      },
+      {
+        "k": 98,
+        "kind": "cycle",
+        "period": 5920,
+        "mu": 0,
+        "expect": 5920,
+        "ok": true
+      },
+      {
+        "k": 99,
+        "kind": "cycle",
+        "period": 5980,
+        "mu": 0,
+        "expect": 5980,
+        "ok": true
+      },
+      {
+        "k": 100,
+        "kind": "cycle",
+        "period": 6040,
+        "mu": 0,
+        "expect": 6040,
+        "ok": true
+      },
+      {
+        "k": 101,
+        "kind": "cycle",
+        "period": 6100,
+        "mu": 0,
+        "expect": 6100,
+        "ok": true
+      },
+      {
+        "k": 102,
+        "kind": "cycle",
+        "period": 6160,
+        "mu": 0,
+        "expect": 6160,
+        "ok": true
+      },
+      {
+        "k": 103,
+        "kind": "cycle",
+        "period": 6220,
+        "mu": 0,
+        "expect": 6220,
+        "ok": true
+      },
+      {
+        "k": 104,
+        "kind": "cycle",
+        "period": 6280,
+        "mu": 0,
+        "expect": 6280,
+        "ok": true
+      },
+      {
+        "k": 105,
+        "kind": "cycle",
+        "period": 6340,
+        "mu": 0,
+        "expect": 6340,
+        "ok": true
+      },
+      {
+        "k": 106,
+        "kind": "cycle",
+        "period": 6400,
+        "mu": 0,
+        "expect": 6400,
+        "ok": true
+      },
+      {
+        "k": 107,
+        "kind": "cycle",
+        "period": 6460,
+        "mu": 0,
+        "expect": 6460,
+        "ok": true
+      },
+      {
+        "k": 108,
+        "kind": "cycle",
+        "period": 6520,
+        "mu": 0,
+        "expect": 6520,
+        "ok": true
+      },
+      {
+        "k": 109,
+        "kind": "cycle",
+        "period": 6580,
+        "mu": 0,
+        "expect": 6580,
+        "ok": true
+      },
+      {
+        "k": 110,
+        "kind": "cycle",
+        "period": 6640,
+        "mu": 0,
+        "expect": 6640,
+        "ok": true
+      },
+      {
+        "k": 111,
+        "kind": "cycle",
+        "period": 6700,
+        "mu": 0,
+        "expect": 6700,
+        "ok": true
+      },
+      {
+        "k": 112,
+        "kind": "cycle",
+        "period": 6760,
+        "mu": 0,
+        "expect": 6760,
+        "ok": true
+      },
+      {
+        "k": 113,
+        "kind": "cycle",
+        "period": 6820,
+        "mu": 0,
+        "expect": 6820,
+        "ok": true
+      },
+      {
+        "k": 114,
+        "kind": "cycle",
+        "period": 6880,
+        "mu": 0,
+        "expect": 6880,
+        "ok": true
+      },
+      {
+        "k": 115,
+        "kind": "cycle",
+        "period": 6940,
+        "mu": 0,
+        "expect": 6940,
+        "ok": true
+      },
+      {
+        "k": 116,
+        "kind": "cycle",
+        "period": 7000,
+        "mu": 0,
+        "expect": 7000,
+        "ok": true
+      },
+      {
+        "k": 117,
+        "kind": "cycle",
+        "period": 7060,
+        "mu": 0,
+        "expect": 7060,
+        "ok": true
+      },
+      {
+        "k": 118,
+        "kind": "cycle",
+        "period": 7120,
+        "mu": 0,
+        "expect": 7120,
+        "ok": true
+      },
+      {
+        "k": 119,
+        "kind": "cycle",
+        "period": 7180,
+        "mu": 0,
+        "expect": 7180,
+        "ok": true
+      },
+      {
+        "k": 120,
+        "kind": "cycle",
+        "period": 7240,
+        "mu": 0,
+        "expect": 7240,
+        "ok": true
+      },
+      {
+        "k": 121,
+        "kind": "cycle",
+        "period": 7300,
+        "mu": 0,
+        "expect": 7300,
+        "ok": true
+      },
+      {
+        "k": 122,
+        "kind": "cycle",
+        "period": 7360,
+        "mu": 0,
+        "expect": 7360,
+        "ok": true
+      },
+      {
+        "k": 123,
+        "kind": "cycle",
+        "period": 7420,
+        "mu": 0,
+        "expect": 7420,
+        "ok": true
+      },
+      {
+        "k": 124,
+        "kind": "cycle",
+        "period": 7480,
+        "mu": 0,
+        "expect": 7480,
+        "ok": true
+      },
+      {
+        "k": 125,
+        "kind": "cycle",
+        "period": 7540,
+        "mu": 0,
+        "expect": 7540,
+        "ok": true
+      },
+      {
+        "k": 126,
+        "kind": "cycle",
+        "period": 7600,
+        "mu": 0,
+        "expect": 7600,
+        "ok": true
+      },
+      {
+        "k": 127,
+        "kind": "cycle",
+        "period": 7660,
+        "mu": 0,
+        "expect": 7660,
+        "ok": true
+      },
+      {
+        "k": 128,
+        "kind": "cycle",
+        "period": 7720,
+        "mu": 0,
+        "expect": 7720,
+        "ok": true
+      },
+      {
+        "k": 129,
+        "kind": "cycle",
+        "period": 7780,
+        "mu": 0,
+        "expect": 7780,
+        "ok": true
+      },
+      {
+        "k": 130,
+        "kind": "cycle",
+        "period": 7840,
+        "mu": 0,
+        "expect": 7840,
+        "ok": true
+      },
+      {
+        "k": 131,
+        "kind": "cycle",
+        "period": 7900,
+        "mu": 0,
+        "expect": 7900,
+        "ok": true
+      },
+      {
+        "k": 132,
+        "kind": "cycle",
+        "period": 7960,
+        "mu": 0,
+        "expect": 7960,
+        "ok": true
+      },
+      {
+        "k": 133,
+        "kind": "cycle",
+        "period": 8020,
+        "mu": 0,
+        "expect": 8020,
+        "ok": true
+      },
+      {
+        "k": 134,
+        "kind": "cycle",
+        "period": 8080,
+        "mu": 0,
+        "expect": 8080,
+        "ok": true
+      },
+      {
+        "k": 135,
+        "kind": "cycle",
+        "period": 8140,
+        "mu": 0,
+        "expect": 8140,
+        "ok": true
+      },
+      {
+        "k": 136,
+        "kind": "cycle",
+        "period": 8200,
+        "mu": 0,
+        "expect": 8200,
+        "ok": true
+      },
+      {
+        "k": 137,
+        "kind": "cycle",
+        "period": 8260,
+        "mu": 0,
+        "expect": 8260,
+        "ok": true
+      },
+      {
+        "k": 138,
+        "kind": "cycle",
+        "period": 8320,
+        "mu": 0,
+        "expect": 8320,
+        "ok": true
+      },
+      {
+        "k": 139,
+        "kind": "cycle",
+        "period": 8380,
+        "mu": 0,
+        "expect": 8380,
+        "ok": true
+      },
+      {
+        "k": 140,
+        "kind": "cycle",
+        "period": 8440,
+        "mu": 0,
+        "expect": 8440,
+        "ok": true
+      },
+      {
+        "k": 141,
+        "kind": "cycle",
+        "period": 8500,
+        "mu": 0,
+        "expect": 8500,
+        "ok": true
+      },
+      {
+        "k": 142,
+        "kind": "cycle",
+        "period": 8560,
+        "mu": 0,
+        "expect": 8560,
+        "ok": true
+      },
+      {
+        "k": 143,
+        "kind": "cycle",
+        "period": 8620,
+        "mu": 0,
+        "expect": 8620,
+        "ok": true
+      },
+      {
+        "k": 144,
+        "kind": "cycle",
+        "period": 8680,
+        "mu": 0,
+        "expect": 8680,
+        "ok": true
+      },
+      {
+        "k": 145,
+        "kind": "cycle",
+        "period": 8740,
+        "mu": 0,
+        "expect": 8740,
+        "ok": true
+      },
+      {
+        "k": 146,
+        "kind": "cycle",
+        "period": 8800,
+        "mu": 0,
+        "expect": 8800,
+        "ok": true
+      },
+      {
+        "k": 147,
+        "kind": "cycle",
+        "period": 8860,
+        "mu": 0,
+        "expect": 8860,
+        "ok": true
+      },
+      {
+        "k": 148,
+        "kind": "cycle",
+        "period": 8920,
+        "mu": 0,
+        "expect": 8920,
+        "ok": true
+      },
+      {
+        "k": 149,
+        "kind": "cycle",
+        "period": 8980,
+        "mu": 0,
+        "expect": 8980,
+        "ok": true
+      },
+      {
+        "k": 150,
+        "kind": "cycle",
+        "period": 9040,
+        "mu": 0,
+        "expect": 9040,
         "ok": true
       }
     ]

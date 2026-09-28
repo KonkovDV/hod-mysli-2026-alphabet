@@ -41,6 +41,37 @@ def classify(w):
     s=encode(w); assert s is not None, w
     r=resolve(s)
     return ("H",r[1]+t) if r[0]=="H" else ("C",r[1],r[2]+t)
+def write_highlight():
+    """Таблица долей бассейна из results/basins.csv: числа не переписываются руками."""
+    import csv as _csv
+    rows=list(_csv.DictReader(open("results/basins.csv",encoding="utf-8")))
+    cyc={r["word_latin"]: r["period"] for r in _csv.DictReader(open("results/cycles.csv",encoding="utf-8"))}
+    lines=["| L | цикл, период | классы | доля среди зациклившихся |",
+           "|---:|---:|---:|---:|"]
+    notes=[]
+    for L in (20,22,24):
+        items=[]
+        for r in rows:
+            if int(r["L"])!=L or not r["cycle_key"]:
+                continue
+            items.append((int(r["cycle_classes"]), r["cycle_key"]))
+        items.sort(reverse=True)
+        if not items:
+            continue
+        total=sum(v for v,_ in items)
+        for v,k in items[:4]:
+            per=cyc.get(k,"?")
+            lines.append(f"| {L} | {per} | {v} | {100*v/total:.1f}% |")
+        top=items[0]
+        t4=sum(v for v,k in items if cyc.get(k)=="4")
+        notes.append(
+            f"При L={L} зациклившихся классов {total}; "
+            f"период {cyc.get(top[1],'?')} собирает {top[0]} ({100*top[0]/total:.1f}%), "
+            f"члены периода 4 вместе — {t4}."
+        )
+    text="\n".join(lines)+"\n\n"+" ".join(notes)+"\n"
+    open("results/basins_highlight.md","w",encoding="utf-8").write(text)
+
 LMAX=int(sys.argv[1]) if len(sys.argv)>1 else 20
 os.makedirs("results",exist_ok=True)
 out=open("results/basins.csv","w",newline=""); wr=csv.writer(out)
@@ -59,3 +90,5 @@ for L in range(2,LMAX+1):
     for k,v in sorted(cnt.items(), key=lambda x:-x[1]): wr.writerow([L,tot,"","",k,v])
     ew.writerow([L,tot,halt,tot-halt,0,maxh]); en.flush()
     print(L,tot,"halt",halt,"cycle",tot-halt,"maxhalt",maxh,"cycles",len(cnt))
+out.close(); en.close()
+write_highlight()
