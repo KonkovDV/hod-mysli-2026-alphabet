@@ -6,8 +6,10 @@
 - E. Post (1943). *Formal reductions of the combinatorial decision problem.* Amer. J. Math. 65, 197–215.
 - M. Minsky (1961). *Recursive unsolvability of Post's problem of "Tag".* Ann. Math. 74(3), 437–455.
 - J. Cocke, M. Minsky (1964). *Universality of tag systems with P=2.* JACM 11(1), 15–20.
-- L. De Mol (2007). Доказательство разрешимости TS(2,2). LNCS 4664, 170–181. Пост это утверждал и не опубликовал.
-- L. De Mol (2008). *Tag systems and Collatz-like functions.* Theor. Comput. Sci. 390(1), 92–101. Теорема 2.1 — наша система после разворота слова. doi:10.1016/j.tcs.2007.10.020.
+- L. De Mol (2007). *Study of limits of solvability in tag systems.* LNCS 4664, 170–181. Это границы разрешимости, не полное доказательство TS(2,2).
+- L. De Mol (2010). *Solvability of the halting and reachability problem for binary 2-tag systems.* Fundamenta Informaticae 99(4), 435–471. Полное доказательство. Пост утверждение не опубликовал.
+- L. De Mol (2008). *Tag systems and Collatz-like functions.* Theor. Comput. Sci. 390(1), 92–101. Теорема 2.1 — наша система после разворота. Теорема 2.3 — условие унарной редукции в её конструкции. doi:10.1016/j.tcs.2007.10.020.
+- L. De Mol (2011). *On the complex behavior of simple tag systems: an experimental approach.* Theor. Comput. Sci. 412. Система Поста $0\to 00$, $1\to 1101$.
 - L. De Mol (2009). Обзор границ разрешимости. EPTCS 1, 56–66. arXiv:0906.3329.
 - M. Cook (2004). *Universality in elementary cellular automata.* Complex Systems 15(1), 1–40, §2.2. Шесть фаз — стандартный подсчёт 2μ при μ=3.
 - T. Neary (2015). *Undecidability in binary tag systems…* STACS, LIPIcs 30, 649–661. Универсальность двухсимвольных систем при большом β, зависящем от программы. Это не TS(2,2).

@@ -2298,5 +2298,34 @@
         }
       }
     ]
+  },
+  "bin2": {
+    "s27": 40656,
+    "orig_s27": 40656,
+    "n_checked_below": 100
+  },
+  "unique3": {
+    "plus_systems": 64000,
+    "plus_found": 6,
+    "minus_systems": 1771561,
+    "minus_found": 0,
+    "plus_prod_max": 3,
+    "minus_prod_max": 4,
+    "n_max": 40
+  },
+  "vardelete": {
+    "systems": 63504,
+    "tested": 381024,
+    "found": 0
+  },
+  "context2": {
+    "tested": 911250,
+    "found": 32
+  },
+  "length9": {
+    "period4_classes": 2,
+    "period40_classes": 4,
+    "period4_words": 162,
+    "period40_words": 324
   }
 }

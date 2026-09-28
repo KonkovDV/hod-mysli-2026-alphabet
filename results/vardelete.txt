@@ -1,0 +1,4 @@
+VARDELETE d=1..4 prod_len=0..5 nprods=63 codes=6 n=2..40
+SYSTEMS 63504
+TESTED 381024
+FOUND 0

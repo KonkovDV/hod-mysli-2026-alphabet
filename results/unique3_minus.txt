@@ -1,0 +1,2 @@
+MODE minus sg=-1 prod_len=0..4 n=2..40 systems=1771561
+FOUND 0

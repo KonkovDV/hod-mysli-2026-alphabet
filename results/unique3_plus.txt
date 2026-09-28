@@ -1,0 +1,8 @@
+MODE plus sg=1 prod_len=0..3 n=2..40 systems=64000
+HIT sg=1 X=B A->B B->VA V->BBB
+HIT sg=1 X=V A->V B->VVV V->BA
+HIT sg=1 X=A A->VB B->A V->AAA
+HIT sg=1 X=A A->BV B->AAA V->A
+HIT sg=1 X=B A->BBB B->AV V->B
+HIT sg=1 X=V A->VVV B->V V->AB
+FOUND 6

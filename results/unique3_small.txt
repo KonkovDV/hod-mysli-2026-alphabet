@@ -1,0 +1,2 @@
+MODE small sg=1 prod_len=0..2 n=2..20 systems=2197
+FOUND 0

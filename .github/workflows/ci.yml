@@ -18,6 +18,10 @@ jobs:
       - run: cmp <(cut -d, -f1-5 /tmp/enum_c.csv) <(cut -d, -f1-5 /tmp/enum_rs.csv)
       # двоичный поиск: ИМЕННО тот, на котором число 48 231 288 в тексте
       - run: ./csrc/search_ext > /tmp/search_ext.txt && grep -q 'SYSTEMS 48231288' /tmp/search_ext.txt
+      - run: ./csrc/search_unique_3letter plus > /tmp/unique3.txt && grep -q '^FOUND 6$' /tmp/unique3.txt
+      - run: ./csrc/search_unique_3letter minus > /tmp/unique3m.txt && grep -q '^FOUND 0$' /tmp/unique3m.txt
+      - run: ./csrc/search_vardelete > /tmp/vardelete.txt && grep -q '^FOUND 0$' /tmp/vardelete.txt && grep -q '^TESTED 381024$' /tmp/vardelete.txt
+      - run: ./csrc/search_binary_context2 > /tmp/context2.txt && grep -q '^FOUND 32$' /tmp/context2.txt && grep -q '^TESTED 911250$' /tmp/context2.txt
       - run: pytest -q tests
       - run: python scripts/qr_phase_diagram.py && python scripts/sigma_law.py 60 && python scripts/basins.py 18
       - run: python scripts/run_all.py
