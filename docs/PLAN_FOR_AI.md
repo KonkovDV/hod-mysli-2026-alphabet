@@ -15,7 +15,7 @@
 
 ## 1. Воспроизведение базы (1–2 ч) — критерий: все тесты зелёные
 - [ ] `pip install -r requirements.txt && make -C csrc`
-- [ ] `python tests/test_all.py`: 10/10 OK
+- [ ] `python tests/test_all.py` и `pytest -q`: все тесты зелёные (не «10/10»: в репозитории три файла тестов, `test_all.py`, `test_audit_v2.py`, `test_redteam.py`)
 - [ ] `./csrc/enum 2 25`: совпадает с `results/enumeration.csv`
 - [ ] `python scripts/run_all.py`: 5 рисунков в `figures/`
 - [ ] Залить в публичный GitHub-репозиторий (имя вроде `hod-mysli-2026-alphabet`), проверить, что GitHub Actions прошёл.

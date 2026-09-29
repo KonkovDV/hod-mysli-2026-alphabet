@@ -154,6 +154,7 @@ def main():
         "SEARCH_N2": isp(se["passed_n2"]),
         "SEARCH_FOUND": str(len(se.get("found_lines") or [])),
         "SEARCH_BOUNDS": se["bounds"],
+        "SEARCH_BOUNDS_TABLE": se["bounds"].replace("|", "/"),
         "BIN2_S27": isp(nums["bin2"]["s27"]),
         "BIN_LMAX": str(nums["binary_words"]["lmax"]),
         "BIN_HALT": isp(nums["binary_words"]["halt_B"]),

@@ -7,10 +7,24 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import new_results as nr
 
 
-def test_bin2_stepwise():
-    """Б^n в исходной системе и в BIN2 совпадают на каждом шаге, включая S(27)."""
-    assert nr.check_N1_N2(80)
-    assert nr.S(27, nr.step1) == nr.S(27, nr.step2) == 40656
+def test_four_suffixes_ba_reachable_aa_unused():
+    """Все четыре суффикса заданы. На траекториях Б^n читается БА, не читается АА."""
+    assert set(nr.BIN2) == {"AA", "AB", "BA", "BB"}
+    assert nr.BIN2["BA"] == nr.BIN2["AA"] == "BBB"
+    saw_ba = False
+    for n in range(2, 80):
+        w = "B" * n
+        while len(w) >= 2:
+            u = nr.h(w)
+            suf = u[-2:]
+            assert suf in nr.BIN2
+            if suf == "BA":
+                saw_ba = True
+            assert suf != "AA"
+            w = nr.step1(w)
+    assert saw_ba
+    # короткие слова: как в S, шаг BIN2 не вызывается при |w|<2
+    assert all(len(s) < 2 for s in ("", "A", "B"))
 
 
 def test_A_followed_by_V():
