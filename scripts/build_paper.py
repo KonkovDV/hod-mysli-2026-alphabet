@@ -17,7 +17,13 @@ def commit_id() -> str:
         h = subprocess.check_output(
             ["git", "rev-parse", "--short=12", "HEAD"], cwd=ROOT, text=True
         ).strip()
-        dirty = subprocess.call(["git", "diff", "--quiet", "HEAD"], cwd=ROOT) != 0
+        dirty = subprocess.call(
+            [
+                "git", "diff", "--quiet", "HEAD", "--", ".",
+                ":!paper/solution_ru.md", ":!paper/solution.pdf",
+            ],
+            cwd=ROOT,
+        ) != 0
         return h + ("-dirty" if dirty else "")
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "unknown"
